@@ -20,5 +20,5 @@ class categorie(Node):
         return super().__str__()
 
     def get_inventions(self):
-        return self.__inventions_dict
+        return self.value + " , with ".join(self.__inventions_dict)
     

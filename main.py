@@ -27,6 +27,7 @@ def ajouter_categorie(element,node=racine):
 
 
 def ajouter_invention(nom_cat, nom, inventeur, date):
+    print(ajouter_categorie(nom_cat).value)
     ajouter_categorie(nom_cat).ajouter_invention(Invention(nom, inventeur, date))
 
 
@@ -41,4 +42,4 @@ def afficher_categories_et_inventions(root):
         print(i.get_inventions())
 
 
-afficher_categories_et_inventions(racine)
+# afficher_categories_et_inventions(racine)
