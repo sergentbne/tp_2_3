@@ -3,6 +3,9 @@ from invention import Invention
 from binarytree import Node
 
 racine = categorie("Racine")
+liste_categories = [racine]
+
+
 
 def ajouter_categorie(element,node=racine):
     global racine
@@ -10,15 +13,21 @@ def ajouter_categorie(element,node=racine):
 
     if node.value < element:
         if node.right: ajouter_categorie(element, node.right)
-        else: node.right = categorie(element)
+        else: 
+            node.right = categorie(element)
+            liste_categories.append(node.right)
     elif node.value > element:
         if node.left: ajouter_categorie(element, node.left)
-        else: node.left = categorie(element)
+        else: 
+            node.left = categorie(element)
+            liste_categories.append(node.left)
     return node
 
 
+
+
 def ajouter_invention(nom_cat, nom, inventeur, date):
-    ajouter_categorie(nom_cat)#.ajouter_invention(Invention(nom, inventeur, date))
+    ajouter_categorie(nom_cat).ajouter_invention(Invention(nom, inventeur, date))
 
 
 ajouter_categorie("Physique")
@@ -28,6 +37,8 @@ ajouter_invention("Physique", "stuff", "Galilasdée", 1231)
 
 def afficher_categories_et_inventions(root):
     print(root)
+    for i in liste_categories:
+        print(i.get_inventions())
 
 
 afficher_categories_et_inventions(racine)
