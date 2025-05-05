@@ -8,7 +8,7 @@ class categorie(Node):
         self.__inventions_dict = dict()
 
     def ajouter_invention(self, invention: Invention):
-        if type(invention) is Invention:
+        if type(invention) is not Invention:
             raise TypeError("objet n'est pas de type invention")
         self.__inventions_dict[invention.get_nom()] = invention
 
