@@ -3,12 +3,14 @@ from categorie import categorie
 # import invention
 from binarytree import Node
 
+
+
+
+
 racine = Node("Racine")
 
 
 def ajoute_elem(root, elem):
-    if type(elem) is categorie:
-        
     if not root.left:
         root.left = Node(elem)
     elif not racine.right:
