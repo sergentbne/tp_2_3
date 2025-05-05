@@ -2,9 +2,9 @@ import categorie
 import invention
 from binarytree import Node
 
-root = Node("0")
+root = None
 
-def ajoute_categorie(root,element):
+def ajoute_categorie(element):
     if not root:
         root = categorie(element)
     if root.value > element:
