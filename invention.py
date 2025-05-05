@@ -18,5 +18,11 @@ class Invention:
     def get_inventeur(self) -> str:
         self.__inventeur
 
-    def set_inventeur(self) -> None:
-        pass
+    def set_inventeur(self, inv) -> None:
+        self.__inventeur = inv
+
+    def get_annee(self):
+        return self.__annee_creation
+
+    def set_annee(self, annee):
+        self.__annee_creation = annee
