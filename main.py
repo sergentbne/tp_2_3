@@ -4,9 +4,7 @@ from binarytree import Node
 
 racine = Node("Racine")
 
-def ajoute_elem(root,elem,type_el):
-    if type(elem) != type_el:
-        raise TypeError(str(elem)+" n'est pas de classe "+str(type_el))
+def ajoute_elem(root,elem):
     if not root.left:
         root.left = Node(elem)
     elif not racine.right:
@@ -17,3 +15,7 @@ def ajoute_elem(root,elem,type_el):
 ajoute_elem(racine,2,int)
 ajoute_elem(racine,"3a",str)
 print(racine)
+
+
+
+
