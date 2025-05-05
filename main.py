@@ -4,17 +4,18 @@ from binarytree import Node
 
 root = None
 
-def ajoute_categorie(element):
+def ajouter_categorie(element):
     if not root:
         root = categorie(element)
     if root.value > element:
-        ajoute_categorie(root.left,element)
+        ajouter_categorie(root.left,element)
     elif root.value < element:
-        ajoute_categorie(root.right,element)
+        ajouter_categorie(root.right,element)
+    return root
 
 
 def ajouter_invention(nom_cat,nomninventeur,date):
-    pass
+    ajouter_categorie(nom_cat).ajouter_invention
     
 
 ajouter_invention("Physique", "Pendule", "Galilée", 1581)
