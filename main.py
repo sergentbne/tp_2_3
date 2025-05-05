@@ -4,7 +4,8 @@ from binarytree import Node
 
 racine = None
 
-def ajouter_categorie(element, root = racine):
+
+def ajouter_categorie(element, root=racine):
     if not root:
         root = categorie(element)
     elif root.value > element:
