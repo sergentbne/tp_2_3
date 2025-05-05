@@ -38,7 +38,7 @@ De plus, vous devez afficher un message décrivant l'action demandée. Par exemp
 
 Pour le choix des structures de données, utilisez :
 
-•	Un arbre binaire pour les catégories (une catégorie a pour attributs : un objet de type Node de la bibliothèque binarytree et un dictionnaire pour les inventions d'une catégorie.
+•	Un arbre binaire pour les catégories (une catégorie a pour attributs : un objet de type Node de la bibliothèque binarytree et un dictionnaire pour les inventions d'une catégorie).
  
 
 L'exécution du programme doit se faire avec l'appel de méthodes dans le programme principal.
