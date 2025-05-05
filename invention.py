@@ -14,8 +14,9 @@ class Invention:
 
     def set_nom(self, nom) -> None:
         self.__nom = nom
-    
+
     def get_inventeur(self) -> str:
         self.__inventeur
-        
-    def set_inventeur(self) -> N
+
+    def set_inventeur(self) -> None:
+        pass
