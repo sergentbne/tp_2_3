@@ -13,24 +13,4 @@ def ajoute_categorie(root,element):
         ajoute_categorie(root.right,element)
      
     
-    
-
-
-
-
-
-def ajoute_invention(element,cat):
-    ajoute_elem(
-        racine.left if racine.left == Node(cat) else racine.right
-    )
-
-
-
-
-
-ajoute_elem(racine,2,int)
-ajoute_elem(racine,"3a",str)
-print(racine)
-
-
 
