@@ -1,23 +1,36 @@
-# import categorie
-# import invention
+import categorie
+import invention
 from binarytree import Node
 
-racine = Node("Racine")
+root = Node("0")
 
-def ajoute_elem(root,elem,type_el):
-    if type(elem) != type_el:
-        raise TypeError(str(elem)+" n'est pas de classe "+str(type_el))
-    if not root.left:
-        root.left = Node(elem)
-    elif not racine.right:
-        root.right = Node(elem)
-    else:
-        raise ValueError(str(root)+" noeud satiété")
+def ajoute_categorie(root,element):
+    if not root:
+        root = categorie(element)
+    if root.value > element:
+        ajoute_categorie(root.left,element)
+    elif root.value < element:
+        ajoute_categorie(root.right,element)
+     
+    
+    
+
+
+
+
+
+def ajoute_invention(element,cat):
+    ajoute_elem(
+        racine.left if racine.left == Node(cat) else racine.right
+    )
+
+
+
+
 
 ajoute_elem(racine,2,int)
 ajoute_elem(racine,"3a",str)
 print(racine)
-
 
 
 
