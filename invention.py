@@ -6,8 +6,16 @@ class Invention:
 
     def __str__(self):
         print(
-            f"nom de l'invention: {self.__nom}, nom de l'inventeur: {self.__} et année de création: {self.__annee_creation}"
+            f"nom de l'invention: {self.__nom}, nom de l'inventeur: {self.__inventeur} et année de création: {self.__annee_creation}"
         )
 
     def get_nom(self) -> str:
         return self.__nom
+
+    def set_nom(self, nom) -> None:
+        self.__nom = nom
+    
+    def get_inventeur(self) -> str:
+        self.__inventeur
+        
+    def set_inventeur(self) -> N
