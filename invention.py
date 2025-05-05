@@ -8,3 +8,6 @@ class Invention:
         print(
             f"nom de l'invention: {self.__nom}, nom de l'inventeur: {self.__} et année de création: {self.__annee_creation}"
         )
+
+    def get_nom(self) -> str:
+        return self.__nom

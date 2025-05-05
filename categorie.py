@@ -4,14 +4,13 @@ from binarytree import Node
 
 class categorie(Node):
     def __init__(self, nom):
-        super.__init__()
-        self.__nom = nom
-        self.__invention = []
+        super.__init__(nom)
+        self.__inventions = dict()
 
-    def ajouter_invention(self, invention):
+    def ajouter_invention(self, invention: Invention):
         if type(invention) is Invention:
             raise TypeError("objet n'est pas de type invention")
-        self.__invention.append(invention)
+        self.__invention[invention.get_nom] = invention.get_nom()
 
     def get_nom(self):
         return self.__nom
