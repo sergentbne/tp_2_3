@@ -6,8 +6,8 @@ racine = None
 
 
 def ajouter_categorie(element, root=racine):
-    print(type(root))
-    if root == categorie("0"):
+    print(root)
+    if root == None:
         root = categorie(element)
     elif root.value > element:
         ajouter_categorie(element, root.left)
