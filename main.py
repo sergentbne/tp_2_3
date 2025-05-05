@@ -14,6 +14,7 @@ def ajoute_categorie(element):
 
 
 def ajouter_invention(nom_cat,nomninventeur,date):
+    pass
     
 
 ajouter_invention("Physique", "Pendule", "Galilée", 1581)
