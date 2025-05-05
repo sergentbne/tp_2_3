@@ -16,4 +16,4 @@ class categorie(Node):
         return self.__nom
 
     def __str__(self):
-        print(", ".join(self.__invention))
+        return ", ".join(self.__inventions_dict)
