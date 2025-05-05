@@ -2,23 +2,21 @@ import categorie
 import invention
 from binarytree import Node
 
-root = None
 
-def ajouter_categorie(element):
+def ajouter_categorie(element, root=None):
     if not root:
         root = categorie(element)
-    if root.value > element:
-        ajouter_categorie(root.left,element)
+    elif root.value > element:
+        ajouter_categorie(element,root.left)
     elif root.value < element:
-        ajouter_categorie(root.right,element)
+        ajouter_categorie(element,root.right)
     return root
 
 
-def ajouter_invention(nom_cat,nomninventeur,date):
-    ajouter_categorie(nom_cat).ajouter_invention
+def ajouter_invention(nom_cat,nom,inventeur,date):
+    ajouter_categorie(nom_cat).ajouter_invention(invention(nom,inventeur,date))
     
-
 ajouter_invention("Physique", "Pendule", "Galilée", 1581)
      
-    
-
+def afficher_categories_et_inventions(racine):
+    pass
