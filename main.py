@@ -24,7 +24,7 @@ ajouter_invention("Physique", "Pendule", "Galilée", 1581)
 ajouter_invention("Physique", "stuff", "Galilasdée", 1231)
 
 
-def afficher_categories_et_inventions(root):
-    print(root)
+# def afficher_categories_et_inventions(root):
+#     print(root)
 
 afficher_categories_et_inventions(racine)
