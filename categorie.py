@@ -4,7 +4,7 @@ from binarytree import Node
 
 class categorie(Node):
     def __init__(self, nom):
-        super.__init__(nom)
+        super().__init__(nom)
         self.__inventions_dict = dict()
 
     def ajouter_invention(self, invention: Invention):
