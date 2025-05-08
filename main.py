@@ -1,9 +1,5 @@
 from categorie import categorie
 from invention import Invention
-from binarytree import Node
-
-racine = categorie("Racine")
-liste_categories = [racine]
 
 
 class arbre_binaire:
