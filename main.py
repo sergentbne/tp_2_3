@@ -45,7 +45,7 @@ class arbre_binaire:
         crawler = list()
         if nb_iter == 0:
             root = self.__racine
-
+        # Note -> faisait des listes inbriqué, donc dépacké avec ça
         if root.left:
             [crawler.append(i) for i in self.crawler(nb_iter + 1, root=root.left)]
         if root.right:
