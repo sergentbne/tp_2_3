@@ -5,9 +5,8 @@ class Invention:
         self.__annee_creation = annee
 
     def __str__(self):
-        print(
-            f"nom de l'invention: {self.__nom}, nom de l'inventeur: {self.__inventeur} et année de création: {self.__annee_creation}"
-        )
+        return f"{self.__nom}, de {self.__inventeur}, en {self.__annee_creation}"
+        
 
     def get_nom(self) -> str:
         return self.__nom
