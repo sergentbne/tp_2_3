@@ -9,6 +9,7 @@ liste_categories = [racine]
 class arbre_binaire:
     def __init__(self):
         self.__racine = categorie("Racine")
+        self.__racine_courante: categorie
 
     def ajouter_ou_trouver_categorie(self, element: str, node=None) -> categorie:
         if node is None:
@@ -17,17 +18,19 @@ class arbre_binaire:
 
         if node.value < element:
             if node.right:
-                self.ajouter_ou_trouver_categorie(element, node.right)
+                node = self.ajouter_ou_trouver_categorie(element, node.right)
 
             else:
                 node.right = categorie(element)
+                return node.right
 
         elif node.value > element:
             if node.left:
-                self.ajouter_ou_trouver_categorie(element, node.left)
+                node = self.ajouter_ou_trouver_categorie(element, node.left)
 
             else:
                 node.left = categorie(element)
+                return node.left
 
         return node
 
@@ -35,36 +38,30 @@ class arbre_binaire:
         self, nom_cat: str, nom: str, inventeur: str, date: int
     ) -> None:
         classe_de_categorie = self.ajouter_ou_trouver_categorie(nom_cat)
-        print(classe_de_categorie.value)
+        print("valeur de la racine:", classe_de_categorie.value)
         classe_de_categorie.ajouter_invention(Invention(nom, inventeur, date))
 
-    def crawler(self, nb_iter: int = 0, root=None) -> set:
+    def crawler(self, nb_iter: int = 0, root=None) -> list:
         crawler = list()
         if nb_iter == 0:
             root = self.__racine
-            print(self.__racine)
 
         if root.left:
             [crawler.append(i) for i in self.crawler(nb_iter + 1, root=root.left)]
         if root.right:
             [crawler.append(i) for i in self.crawler(nb_iter + 1, root=root.right)]
-        crawler.append(root.value)
+        crawler.append(root)
 
         return crawler
+
+    def afficher_categories_et_inventions(self):
+        print(self.__racine)
+        for i in self.crawler():
+            print(i.afficher())
 
 
 arbre = arbre_binaire()
 arbre.ajouter_ou_trouver_categorie("Physique")
 arbre.ajouter_invention("Maths", "Pendule", "Galilée", 1581)
 arbre.ajouter_invention("Physique", "stuff", "Galilasdée", 1231)
-print(arbre.crawler())
-print(racine)
-
-
-def afficher_categories_et_inventions(root):
-    print(root)
-    for i in liste_categories:
-        print(arbre.crawler())
-
-
-# afficher_categories_et_inventions(racine)
+arbre.afficher_categories_et_inventions()
