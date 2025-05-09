@@ -15,7 +15,7 @@ class Invention:
         self.__nom = nom
 
     def get_inventeur(self) -> str:
-        self.__inventeur
+        return self.__inventeur
 
     def set_inventeur(self, inv) -> None:
         self.__inventeur = inv

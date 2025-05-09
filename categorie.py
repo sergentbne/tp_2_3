@@ -18,9 +18,12 @@ class categorie(Node):
     def afficher(self):
         if len(self.__inventions_dict) == 0:
             return ""
+        
         return f"{self.value} , with: \n" + "\n".join(map(str,[self.__inventions_dict[x] for x in self.__inventions_dict]))
     
     def get_inventions(self):
         return self.__inventions_dict
+
+
     
     
