@@ -2,7 +2,7 @@ from invention import Invention
 from binarytree import Node
 
 
-class categorie(Node):
+class Categorie(Node):
     def __init__(self, nom):
         super().__init__(nom)
         self.__inventions_dict = dict()

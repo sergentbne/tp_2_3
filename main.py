@@ -1,13 +1,13 @@
-from categorie import categorie
+from categorie import Categorie
 from invention import Invention
 
 
 class arbre_binaire:
     def __init__(self):
-        self.__racine = categorie("Racine")
-        self.__racine_courante: categorie
+        self.__racine = Categorie("Racine")
+        self.__racine_courante: Categorie
 
-    def ajouter_ou_trouver_categorie(self, element: str, node=None) -> categorie:
+    def ajouter_ou_trouver_categorie(self, element: str, node=None) -> Categorie:
         if node is None:
             node = self.__racine
         # print(element,"tries",racine, "to", node,"\n")
@@ -17,7 +17,7 @@ class arbre_binaire:
                 node = self.ajouter_ou_trouver_categorie(element, node.right)
 
             else:
-                node.right = categorie(element)
+                node.right = Categorie(element)
                 return node.right
 
         elif node.value > element:
@@ -25,7 +25,7 @@ class arbre_binaire:
                 node = self.ajouter_ou_trouver_categorie(element, node.left)
 
             else:
-                node.left = categorie(element)
+                node.left = Categorie(element)
                 return node.left
 
         return node
