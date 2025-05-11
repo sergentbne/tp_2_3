@@ -30,12 +30,13 @@ def ajouter_invention(nom_cat, nom, inventeur, date):
 
 def modifier_annee_invention(invention, date, node = racine):
     global racine
-    inventions_dict = node.get_inventions()
-    if invention in inventions_dict:
-        inventions_dict[invention].set_annee(date)
-    else:
-        if node.left: modifier_annee_invention(invention, date, node.left)
-        if node.right: modifier_annee_invention(invention, date, node.right)
+    if node:
+        inventions_dict = node.get_inventions()
+        if invention in inventions_dict:
+            inventions_dict[invention].set_annee(date)
+        else:
+            if node.left: modifier_annee_invention(invention, date, node.left)
+            if node.right: modifier_annee_invention(invention, date, node.right)
 
 
 
@@ -63,13 +64,16 @@ def afficher_inventions_par_inventeur(inventeur, node = racine):
 
 
 #tests:
+#ajouter inventions ajoute automatiquement la categorie si elle n'est pas presente
 
-ajouter_categorie("Physique")
 ajouter_invention("Maths", "Pendule", "Galilée", 1581)
 ajouter_invention("Informatique", "Calculateur", "Babbage", 1837)
+ajouter_categorie("Physique")
 ajouter_invention("Physique", "Stuff", "Galilée", 1231)
 
 modifier_annee_invention("Pendule", 1602)
+
+print(racine)
 
 afficher_categories_et_inventions()
 
