@@ -73,8 +73,6 @@ ajouter_invention("Physique", "Stuff", "Galilée", 1231)
 
 modifier_annee_invention("Pendule", 1602)
 
-print(racine)
-
 afficher_categories_et_inventions()
 
 afficher_inventions_par_inventeur("Babbage")
